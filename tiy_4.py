@@ -41,3 +41,16 @@ print("---[4-9]")
 cube_list_two=[]
 cube_list_two = [cube**3 for cube in range(1,11)]
 print(cube_list_two)
+ #4-10
+print("---[4-10]")
+pizzas=['pizza1','pizza2','pizza3','pizza4','pizza5','pizza6']
+print("First three:")
+print(pizzas[:3])
+
+print("\nThree from middle")
+mid=len(pizzas)/2
+
+print(pizzas[mid:mid+3])
+
+print("\nLast three")
+print(pizzas[-3:])
