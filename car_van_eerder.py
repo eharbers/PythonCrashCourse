@@ -31,39 +31,23 @@ class Car(object):
         """Add the given amount to the odometer reading"""
         self.odometer_reading += miles
 
-class Battery(object):
-    """A simple attempt to model a battery"""
-    
-    def __init__(self, battery_size=70):
-        """Initialize the battery's attributes"""
-        self.battery_size = battery_size
 
+my_new_car = Car('audi', 'a4', 2016)
+print(my_new_car.get_descriptive_name())
+my_new_car.read_odometer() 
 
-    def describe_battery(self):
-        """Print a statement describbing the battery size"""
-        print("This car has a " + str(self.battery_size) + "kWh battery.")
+my_new_car.update_odometer(23)
+my_new_car.read_odometer()
 
+my_new_car.update_odometer(14)
+my_new_car.read_odometer()
 
-    def get_range(self):
-        """Print a statement about the range this battery provides"""
-        if self.battery_size == 70:
-            range = 240
-        elif self.battery_size == 85:
-            range = 270
+my_used_car = Car('subaru','outback', 2013 )
+print(my_used_car.get_descriptive_name())
 
-        message = "This car can go approximately " + str(range)
-        message += " miles on a full charge."
-        print(message)
+my_used_car.update_odometer(23500)
+my_used_car.read_odometer()
 
-
-class ElectricCar(Car):
-    """Models aspects of a car, specific to electric vehicles"""
-
-    def __init__(self, make, model, year):
-        """
-        Initialize attributes of the parent class.
-        Then initialize attributes specific to an electric car
-        """
-        super(ElectricCar, self).__init__(make, model, year)
-        self.battery = Battery()
+my_used_car.increment_odometer(100)
+my_used_car.read_odometer()
 
