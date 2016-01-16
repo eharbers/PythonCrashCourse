@@ -16,3 +16,16 @@ if birthday in pi_string:
 else:
     print("Your birthday does not appear in the first million digits of pi.")
 
+index = pi_string.index(birthday)
+print (index)
+print (pi_string[index:index+6])
+
+teller = 1
+
+print(teller, len(pi_string))
+
+while birthday in pi_string[teller:]:
+    teller = pi_string[teller:].index(birthday)
+    print(teller)
+    if teller == 0:
+        break
